@@ -40,6 +40,8 @@ public class FileOrganizer {
 
         System.out.println("Enter your local path:");
         localPath = scanner.nextLine();
+
+        scanner.close();
     }
 
     public void organizeFiles() {
