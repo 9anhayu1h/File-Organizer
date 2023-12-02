@@ -1,20 +1,45 @@
 import java.io.IOException;
+import java.util.Scanner;
 
 public class main {
 
-    public static String sourceFolder = "C:/Users/PC/Documents/IFL/CE";
+    public String sourceFolder = "C:/Users/PC/Documents/IFL/ISK";
+    public String cleanUpLevel;
 
-    public static void Main(String[] args) {
-
+    public static void main(String[] args) {
         try {
-            CleanUp.createSubFolder(sourceFolder);
+            main program = new main();
+            program.getUserInput();
+            switch (program.cleanUpLevel) {
+                case "Light":
 
-            // Organize files in the source folder
-            CleanUp.organizeFiles(sourceFolder);
-
-            System.out.println("Files organized successfully!");
+                    LightCleanUp lightCleanUp = new LightCleanUp(program.sourceFolder);
+                    lightCleanUp.createLightFolder(program.sourceFolder);
+                    System.out.println("Files have been lightly organized");
+                    break;
+                default:
+                    // Add your code here for other cases
+                    break;
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }
+    
+
+    
     }
+
+        public void getUserInput() {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Welcome to File Organizer!");
+        System.out.println("Please select your plan (Light, Medium, Huge):");
+        cleanUpLevel = scanner.nextLine();
+
+        // System.out.println("Enter your local path:");
+        // sourceFolder = scanner.nextLine();
+
+        scanner.close();
+    }
+
 }

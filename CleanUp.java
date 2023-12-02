@@ -7,26 +7,14 @@ import java.nio.file.StandardCopyOption;
 public class CleanUp {
 
     // Define the file extensions and corresponding folders
-    private static String[][] extensionsAndFolders = {
-            {"pdf", "PDFFiles"},
-            {"docx", "WordFiles"},
-            {"xlsx", "ExcelFiles"},
-            {"csv", "ExcelFiles"},
-            // Add more extensions and folders as needed
+    protected String[][] extensionsAndFolders = {
+
     };
 
-    public static void createSubFolder(String sourceFolder) {
-        for (String[] extensionAndfolder : extensionsAndFolders) {
-            String folderName = extensionAndfolder[1];
-
-            File folder = new File(sourceFolder, folderName);
-            if (!folder.exists()) {
-                folder.mkdirs();
-            }
-        }
+    public CleanUp() {
     }
 
-    public static void organizeFiles(String sourceFolder) throws IOException {
+    public void organizeFiles(String sourceFolder) throws IOException {
         File[] files = new File(sourceFolder).listFiles();
         if (files != null) {
             for (File file : files) {
@@ -48,7 +36,7 @@ public class CleanUp {
         }
     }
 
-    private static String findDestinationSubFolder(String extension) {
+    private String findDestinationSubFolder(String extension) {
         
         for (String[] extensionAndFolder : extensionsAndFolders) {
             if (extensionAndFolder[0].equalsIgnoreCase(extension)) {
