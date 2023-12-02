@@ -14,7 +14,7 @@ public class main {
                 case "Light":
 
                     LightCleanUp lightCleanUp = new LightCleanUp(program.sourceFolder);
-                    lightCleanUp.createLightFolder(program.sourceFolder);
+                    lightCleanUp.CleanUpLightly(program.sourceFolder);
                     System.out.println("Files have been lightly organized");
                     break;
                 default:
