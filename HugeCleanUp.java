@@ -1,6 +1,6 @@
 import java.io.IOException;
 
-public class LightCleanUp extends CleanUp {
+public class HugeCleanUp extends CleanUp {
 
     private static String[][] freeExtensionFolders = {
         {"pdf", "PDFFiles"},
@@ -9,12 +9,12 @@ public class LightCleanUp extends CleanUp {
         // Add more extensions for the Free plan as needed
         };
 
-    public LightCleanUp(String sourceFolder) {
+    public HugeCleanUp(String sourceFolder) {
         super();
         this.extensionsAndFolders = freeExtensionFolders;
     }
 
-    public void CleanUpLightly(String sourceFolder) throws IOException {
+    public void CleanUpProfessionally(String sourceFolder) throws IOException {
         createSubFolder(sourceFolder);
         organizeFiles(sourceFolder);
     }
