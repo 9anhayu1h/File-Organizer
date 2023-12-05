@@ -14,6 +14,17 @@ public class CleanUp {
     public CleanUp() {
     }
 
+    public void createSubFolder(String sourceFolder) {
+        for (String[] extensionAndfolder : extensionsAndFolders) {
+            String folderName = extensionAndfolder[1];
+
+            File folder = new File(sourceFolder, folderName);
+            if (!folder.exists()) {
+                folder.mkdirs();
+            }
+        }
+    }
+
     public void organizeFiles(String sourceFolder) throws IOException {
         File[] files = new File(sourceFolder).listFiles();
         if (files != null) {

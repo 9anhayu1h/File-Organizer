@@ -1,7 +1,7 @@
 import java.io.File;
 import java.io.IOException;
 
-public class LightCleanUp extends CleanUp {
+public class MediumCleanUp extends CleanUp {
 
     private static String[][] freeExtensionFolders = {
         {"pdf", "PDFFiles"},
@@ -10,12 +10,12 @@ public class LightCleanUp extends CleanUp {
         // Add more extensions for the Free plan as needed
         };
 
-    public LightCleanUp(String sourceFolder) {
+    public MediumCleanUp(String sourceFolder) {
         super();
         this.extensionsAndFolders = freeExtensionFolders;
     }
 
-    public void CleanUpLightly(String sourceFolder) throws IOException {
+    public void CleanUpNormally(String sourceFolder) throws IOException {
         createSubFolder(sourceFolder);
         organizeFiles(sourceFolder);
     }
