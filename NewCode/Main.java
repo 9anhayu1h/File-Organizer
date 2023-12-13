@@ -3,12 +3,12 @@ import java.io.File;
 import java.io.IOException;
 
 public class Main {
-    private static String sourceFolder = "C:/Users/PC/Downloads/NYC";
+    private static String sourceFolder = "C:/Users/PC/Downloads";
     private static Folder[] folders = {
             new Documents(),
-            new Pictures(),
-            new Musics(),
-            new Videos(),
+            new Picture(),
+            new Music(),
+            new Video(),
             new Compressed(),
             new Programs(),
     };
@@ -26,6 +26,17 @@ public class Main {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+        // Documents documents = new Documents();
+        // Pictures pictures = new Pictures();
+        // Documents a = new Documents();
+        
+        // String test = documents.toString();
+        // String pic = pictures.toString();
+        // System.out.println(test);
+        // System.out.println(pic);
+
+        // System.out.println(documents.equals(pictures));
     }
 
     private static void createSubFolder(String sourceFolder) {
@@ -44,54 +55,12 @@ public class Main {
                     String extension = fileName.substring(fileName.lastIndexOf('.') + 1);
 
                     for (Folder folder : folders) {
-                        if (folder instanceof Documents) {
-                            //cast this folder object to documents object to access the extensions array
-                            Documents documents = (Documents) folder;
-                            for (String docExtension : documents.extensions) {
-                                if (extension.equals(docExtension)) {
+                        if (folder instanceof FileOrganizer) {
+                            FileOrganizer fileOrganizer = (FileOrganizer) folder;
+                            for (String finalExtension : fileOrganizer.getExtensions()) {
+                                if (finalExtension.equals(extension)) {
                                     folder.organizeFile(file, fileName, sourceFolder);
-                                }
-                            }
-                        } else if (folder instanceof Pictures) {
-                            Pictures pictures = (Pictures) folder;
-                            for (String picExtension : pictures.extensions) {
-                                if (extension.equals(picExtension)) {
-                                    folder.organizeFile(file, fileName, sourceFolder);
-                                }
-                            }
-                        } else if (folder instanceof Pictures) {
-                            Pictures pictures = (Pictures) folder;
-                            for (String picExtension : pictures.extensions) {
-                                if (extension.equals(picExtension)) {
-                                    folder.organizeFile(file, fileName, sourceFolder);
-                                }
-                            }
-                        } else if (folder instanceof Musics) {
-                            Musics musics = (Musics) folder;
-                            for (String musicExtension : musics.extensions) {
-                                if (extension.equals(musicExtension)) {
-                                    folder.organizeFile(file, fileName, sourceFolder);
-                                }
-                            } 
-                        } else if (folder instanceof Videos) {
-                            Videos videos = (Videos) folder;
-                            for (String vidExtension : videos.extensions) {
-                                if (extension.equals(vidExtension)) {
-                                    folder.organizeFile(file, fileName, sourceFolder);
-                                }
-                            }
-                        } else if (folder instanceof Compressed) {
-                            Compressed compressed = (Compressed) folder;
-                            for (String compressedExtension : compressed.extensions) {
-                                if (extension.equals(compressedExtension)) {
-                                    folder.organizeFile(file, fileName, sourceFolder);
-                                }
-                            }
-                        } else if (folder instanceof Programs) {
-                            Programs programs = (Programs) folder;
-                            for (String programExtension : programs.extensions) {
-                                if (extension.equals(programExtension)) {
-                                    folder.organizeFile(file, fileName, sourceFolder);
+                                    break;
                                 }
                             }
                         } else {

@@ -2,7 +2,7 @@ package NewCode;
 import java.io.File;
 import java.io.IOException;
 
-public abstract class Folder {
+public abstract class Folder implements FileOrganizer {
     protected String folderName;
 
     public Folder(String folderName) {
