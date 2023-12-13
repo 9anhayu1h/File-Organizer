@@ -1,26 +1,28 @@
+package OldCode;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardCopyOption;
+import java.util.ArrayList;
 
 public class CleanUp {
 
     // Define the file extensions and corresponding folders
-    protected String[][] extensionsAndFolders = {
-
-    };
+    protected ArrayList<String[]> extensionsAndFolders = new ArrayList<String[]>();
 
     public CleanUp() {
     }
 
     public void createSubFolder(String sourceFolder) {
         for (String[] extensionAndfolder : extensionsAndFolders) {
-            String folderName = extensionAndfolder[1];
+            for (String extension : extensionAndfolder) {
+                String folderName = extensionAndfolder[1];
 
-            File folder = new File(sourceFolder, folderName);
-            if (!folder.exists()) {
-                folder.mkdirs();
+                File folder = new File(sourceFolder, folderName);
+                if (!folder.exists()) {
+                    folder.mkdirs();
+                }
             }
         }
     }

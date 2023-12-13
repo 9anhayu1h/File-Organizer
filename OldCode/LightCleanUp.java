@@ -1,6 +1,7 @@
+package OldCode;
 import java.io.IOException;
 
-public class MediumCleanUp extends CleanUp {
+public class LightCleanUp extends CleanUp {
 
     private static String[][] freeExtensionFolders = {
         {"pdf", "PDFFiles"},
@@ -9,12 +10,12 @@ public class MediumCleanUp extends CleanUp {
         // Add more extensions for the Free plan as needed
         };
 
-    public MediumCleanUp(String sourceFolder) {
+    public LightCleanUp(String sourceFolder) {
         super();
         this.extensionsAndFolders = freeExtensionFolders;
     }
 
-    public void CleanUpNormally(String sourceFolder) throws IOException {
+    public void cleanUpLightly(String sourceFolder) throws IOException {
         createSubFolder(sourceFolder);
         organizeFiles(sourceFolder);
     }

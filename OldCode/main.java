@@ -1,3 +1,4 @@
+package OldCode;
 import java.io.IOException;
 import java.util.Scanner;
 
@@ -15,21 +16,21 @@ public class main {
                 case "Light":
 
                     LightCleanUp lightCleanUp = new LightCleanUp(program.sourceFolder);
-                    lightCleanUp.CleanUpLightly(program.sourceFolder);
+                    lightCleanUp.cleanUpLightly(program.sourceFolder);
                     System.out.println("Files have been lightly organized.");
                     break;
 
                 case "Normal":
 
                     MediumCleanUp mediumCleanUp = new MediumCleanUp(program.sourceFolder);
-                    mediumCleanUp.CleanUpNormally(program.sourceFolder);
+                    mediumCleanUp.cleanUpNormally(program.sourceFolder);
                     System.out.println("Files have been normally organized.");
                     break;
 
                 case "Huge":
 
                     HugeCleanUp hugeCleanUp = new HugeCleanUp(program.sourceFolder);
-                    hugeCleanUp.CleanUpProfessionally(program.sourceFolder);
+                    hugeCleanUp.cleanUpProfessionally(program.sourceFolder);
                     System.out.println("Files have been deeply organized.");
 
                 default:
