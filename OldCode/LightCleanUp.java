@@ -1,3 +1,4 @@
+package OldCode;
 import java.io.IOException;
 
 public class LightCleanUp extends CleanUp {
