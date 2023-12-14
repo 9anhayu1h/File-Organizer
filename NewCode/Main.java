@@ -19,7 +19,6 @@ public class Main {
             
             createSubFolder(sourceFolder);
 
-            // Organize files in the source folder
             organizeFiles(sourceFolder);
 
             System.out.println("Files organized successfully!");
@@ -47,24 +46,27 @@ public class Main {
     }
 
     private static void organizeFiles(String sourceFolder) throws IOException {
+        // Get all files in the source folder
         File[] files = new File(sourceFolder).listFiles();
         if (files != null) {
             for (File file : files) {
+                // Check if the file is a file if so save the file name and extension
                 if (file.isFile()) {
                     String fileName = file.getName();
-                    String extension = fileName.substring(fileName.lastIndexOf('.') + 1);
+                    String fileExtension = fileName.substring(fileName.lastIndexOf('.') + 1);
 
                     for (Folder folder : folders) {
                         if (folder instanceof FileOrganizer) {
+                            //casting, convert folder obj to FileOrganizer obj
                             FileOrganizer fileOrganizer = (FileOrganizer) folder;
-                            for (String finalExtension : fileOrganizer.getExtensions()) {
-                                if (finalExtension.equals(extension)) {
+                            for (String extension : fileOrganizer.getExtensions()) {
+                                if (extension.equals(fileExtension)) {
                                     folder.organizeFile(file, fileName, sourceFolder);
                                     break;
                                 }
                             }
                         } else {
-                            if (extension.equals(folder.folderName.toLowerCase())) {
+                            if (fileExtension.equals(folder.folderName.toLowerCase())) {
                                 folder.organizeFile(file, fileName, sourceFolder);
                             }
                         }
