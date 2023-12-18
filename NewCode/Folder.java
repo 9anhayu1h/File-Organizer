@@ -2,6 +2,12 @@ package NewCode;
 import java.io.File;
 import java.io.IOException;
 
+@FunctionalInterface
+interface FileOrganizer {
+    String[] getExtensions();
+    
+}
+
 public abstract class Folder implements FileOrganizer {
     protected String folderName;
 

@@ -4,6 +4,11 @@ import java.io.IOException;
 
 public class Main {
     private static String sourceFolder = "C:/Users/PC/Downloads";
+
+    static FileOrganizer icon = () -> { 
+            return new String[] {".lnk"};
+        };
+
     private static Folder[] folders = {
             new Documents(),
             new Picture(),
