@@ -9,7 +9,7 @@ public class Main {
 
         @Override
         public void countExtensions() {
-            String documentFolder = "C:/Users/PC/Downloads/Documents";
+            String documentFolder = sourceFolder + "/Documents";
             File folder = new File(documentFolder); // Initialize the folder variable
             int[] extensionCount = new int[extensions.length];
 
