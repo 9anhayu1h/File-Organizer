@@ -1,4 +1,6 @@
 package NewCode;
+
+import java.util.Scanner;
 import java.io.File;
 import java.io.IOException;
 
@@ -52,14 +54,14 @@ public class Main {
             e.printStackTrace();
         }
 
-        Picture pictures = new Picture();
-        Documents a = new Documents();
+        // Picture pictures = new Picture();
+        // Documents a = new Documents();
         
-        String test = document.toString();
-        System.out.println(test);
-        System.out.println(pictures.toString());
+        // String test = document.toString();
+        // System.out.println(test);
+        // System.out.println(pictures.toString());
 
-        System.out.println(document.equals(pictures));
+        // System.out.println(document.equals(pictures));
         document.countExtensions();
 
     }
