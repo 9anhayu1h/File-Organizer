@@ -5,6 +5,7 @@ import java.io.IOException;
 public class Main {
     private static String sourceFolder = "C:/Users/PC/Downloads";
 
+    //anonymous class
     static Documents document = new Documents() {
 
         @Override
@@ -55,9 +56,8 @@ public class Main {
         Documents a = new Documents();
         
         String test = document.toString();
-        String pic = pictures.toString();
         System.out.println(test);
-        System.out.println(pic);
+        System.out.println(pictures.toString());
 
         System.out.println(document.equals(pictures));
         document.countExtensions();
