@@ -5,12 +5,32 @@ import java.io.IOException;
 public class Main {
     private static String sourceFolder = "C:/Users/PC/Downloads";
 
-    static FileOrganizer icon = () -> { 
-            return new String[] {".lnk"};
-        };
+    static Documents document = new Documents() {
+
+        @Override
+        public void countExtensions() {
+            String documentFolder = "C:/Users/PC/Downloads/Documents";
+            File folder = new File(documentFolder); // Initialize the folder variable
+            int[] extensionCount = new int[extensions.length];
+
+            // Counting extensions
+            for (int i = 0; i < extensions.length; i++) {
+                final String extension = extensions[i]; // declaring final variable to use in lambda expression
+                File[] files = folder.listFiles((dir, name) -> name.toLowerCase().endsWith("." + extension));
+                if (files != null) {
+                    extensionCount[i] = files.length;
+                }
+            }
+
+            // Printing extension counts
+            for (int i = 0; i < extensions.length; i++) {
+                System.out.println("Extension: " + extensions[i] + ", Count: " + extensionCount[i]);
+            }
+        }
+    };    
 
     private static Folder[] folders = {
-            new Documents(),
+            document,
             new Picture(),
             new Music(),
             new Video(),
@@ -31,16 +51,17 @@ public class Main {
             e.printStackTrace();
         }
 
-        // Documents documents = new Documents();
-        // Pictures pictures = new Pictures();
-        // Documents a = new Documents();
+        Picture pictures = new Picture();
+        Documents a = new Documents();
         
-        // String test = documents.toString();
-        // String pic = pictures.toString();
-        // System.out.println(test);
-        // System.out.println(pic);
+        String test = document.toString();
+        String pic = pictures.toString();
+        System.out.println(test);
+        System.out.println(pic);
 
-        // System.out.println(documents.equals(pictures));
+        System.out.println(document.equals(pictures));
+        document.countExtensions();
+
     }
 
     private static void createSubFolder(String sourceFolder) {
