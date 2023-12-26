@@ -5,12 +5,12 @@ import java.io.FileReader;
 import java.io.BufferedReader;
 import java.io.IOException;
 
-public class VerifyingPath {
+public class SelectPath {
     
     static String sourceFolder;
     static ArrayList<FolderNameAndPath> folderNameAndPath = new ArrayList<FolderNameAndPath>();
 
-    public VerifyingPath(String FolderName) {
+    public SelectPath(String FolderName) {
         
     }
     
@@ -35,11 +35,12 @@ public class VerifyingPath {
         }
     }
 
-    public void selectPath(FolderNameAndPath input) {
+    public static boolean verifySelectPath(String inputFolderName) {
         
         list();
 
         boolean found = false;
+        FolderNameAndPath input = new FolderNameAndPath(inputFolderName, null);
         for (FolderNameAndPath folder : folderNameAndPath) {
             if (folder.equals(input)) {
                 found = true;
@@ -48,8 +49,10 @@ public class VerifyingPath {
 
         if (found == true) {
             sourceFolder = input.getPath();
+            return true;
         } else {
             System.out.println("Folder not found!");
+            return false;
         }
     }
 

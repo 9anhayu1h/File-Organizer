@@ -2,6 +2,7 @@ package NewCode;
 import java.io.File;
 import java.io.IOException;
 
+@FunctionalInterface
 interface FileOrganizer {
     String[] getExtensions();
     
@@ -11,7 +12,7 @@ public abstract class Folder implements FileOrganizer {
     protected String folderName;
 
     public Folder(String folderName) {
-        this.folderName = folderName;
+        this.folderName = folderName;   
     }
 
     public abstract void organizeFile(File file, String fileName, String sourceFolder) throws IOException;

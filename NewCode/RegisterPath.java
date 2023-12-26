@@ -5,6 +5,9 @@ import java.io.FileWriter;
 import java.io.BufferedWriter;
 
 public class RegisterPath {
+    String folderName;
+    String path;
+
     public static void registerPath(String folderName, String path) {
         Scanner keyboard = new Scanner(System.in);
         String filePath = "C:/Users/PC/Desktop/Programming/Java/Project/NewCode/FolderName&Path.txt";
