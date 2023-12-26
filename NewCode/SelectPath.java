@@ -35,25 +35,16 @@ public class SelectPath {
         }
     }
 
-    public static boolean verifySelectPath(String inputFolderName) {
+    public static String verifySelectPath(String inputFolderName) {
         
         list();
 
-        boolean found = false;
         FolderNameAndPath input = new FolderNameAndPath(inputFolderName, null);
         for (FolderNameAndPath folder : folderNameAndPath) {
             if (folder.equals(input)) {
-                found = true;
+                sourceFolder = folder.getPath();
             }
         }
-
-        if (found == true) {
-            sourceFolder = input.getPath();
-            return true;
-        } else {
-            System.out.println("Folder not found!");
-            return false;
-        }
+        return sourceFolder;
     }
-
 }
