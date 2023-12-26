@@ -27,7 +27,7 @@ public class Main {
         Choice = keyboard.nextInt();
 
         switch (Choice) {
-            case 1:
+            case 2:
                 System.out.print("add folder name: ");
                 tempFolderName = keyboard.next();
                 System.out.print("folder path: ");
@@ -36,14 +36,14 @@ public class Main {
                 RegisterPath.registerPath(tempFolderName, tempPath);
                 break;
 
-            case 2:
-                System.out.println("Select folder name: ");
+            case 1:
+                System.out.println("Search folder name: ");
                 tempFolderName = keyboard.next();
 
-                if (SelectPath.verifySelectPath(tempFolderName) == true) {
+                if (SelectPath.verifySelectPath(tempFolderName) != null) {
                     String sourceFolder = SelectPath.sourceFolder;
-                    FolderNameAndPath selectedFolder = new FolderNameAndPath(tempFolderName, sourceFolder);
-                    System.out.println(selectedFolder.getPath());
+
+                    System.out.println(sourceFolder);
                     // try {
                         
                     //     createSubFolder(selectedFolder.getPath());
@@ -54,6 +54,8 @@ public class Main {
                     // } catch (IOException e) {
                     //     e.printStackTrace();
                     // } 
+                } else {
+                    break;
                 }
             default:
                 break;
@@ -62,24 +64,9 @@ public class Main {
         //anonymous class
         Documents document = new Documents() {
 
-            @Override
             public void countExtensions() {
-                String documentFolder = "C:/Users/PC/Downloads/Documents";
-                File folder = new File(documentFolder); // Initialize the folder variable
-                int[] extensionCount = new int[extensions.length];
-
-                // Counting extensions
                 for (int i = 0; i < extensions.length; i++) {
-                    final String extension = extensions[i]; // declaring final variable to use in lambda expression
-                    File[] files = folder.listFiles((dir, name) -> name.toLowerCase().endsWith("." + extension));
-                    if (files != null) {
-                        extensionCount[i] = files.length;
-                    }
-                }
-
-                // Printing extension counts
-                for (int i = 0; i < extensions.length; i++) {
-                    System.out.println("Extension: " + extensions[i] + ", Count: " + extensionCount[i]);
+                    System.out.println("Extension: " + extensions[i]);
                 }
             }
         }; 
