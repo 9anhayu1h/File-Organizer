@@ -23,6 +23,9 @@ public class Documents extends Folder {
         Files.move(sourcePath, destinationPath, StandardCopyOption.REPLACE_EXISTING);
     }
 
+    public void countExtensions(){};
+
+
     @Override
     public String toString() {
         String d = "Folder Name: " + folderName + "\n" + "Extensions: " + String.join(", ", extensions) + "\n";

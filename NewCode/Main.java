@@ -64,11 +64,13 @@ public class Main {
         //anonymous class
         Documents document = new Documents() {
 
+            @Override
             public void countExtensions() {
                 for (int i = 0; i < extensions.length; i++) {
                     System.out.println("Extension: " + extensions[i]);
                 }
             }
+            
         }; 
 
         // Picture pictures = new Picture();
@@ -79,7 +81,7 @@ public class Main {
         // System.out.println(pictures.toString());
 
         // System.out.println(document.equals(pictures));
-        // document.countExtensions();
+        document.countExtensions();
         keyboard.close();
     }
 
