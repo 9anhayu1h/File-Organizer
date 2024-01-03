@@ -22,4 +22,20 @@ public abstract class Folder implements FileOrganizer {
             folder.mkdirs();
         }
     }
+
+    public void countFiles() {
+        GUI gui = new GUI();
+        String documentFolder = gui.getFolderPath();
+        File folder = new File(documentFolder); // Initialize the folder variable
+        int fileCount = 0;
+
+        // Counting files
+        File[] files = folder.listFiles();
+        if (files != null) {
+            fileCount = files.length;
+        }
+
+        // Printing file count
+        System.out.println("File Count: " + fileCount);
+    }
 }

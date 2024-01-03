@@ -23,6 +23,23 @@ public class Office extends Documents {
             for (int i = 0; i < extensions.length; i++) {
                 System.out.println("Extension: " + extensions[i] + ", Count: " + extensionCount[i]);
             }
-        }    
+        }
+        
+        public void countExtensions(String documentFolder) {
+            File folder = new File(documentFolder);
+            int[] extensionCount = new int[extensions.length];
+        
+            // Counting extensions
+            for (int i = 0; i < extensions.length; i++) {
+                final String extension = extensions[i];
+                File[] files = folder.listFiles((dir, name) -> name.toLowerCase().endsWith("." + extension));
+                if (files != null) {
+                    extensionCount[i] = files.length;
+                }
+            }
+            for (int i = 0; i < extensions.length; i++) {
+                System.out.println("Extension: " + extensions[i] + ", Count: " + extensionCount[i]);
+            }
+        }
 
 }
