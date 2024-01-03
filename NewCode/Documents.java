@@ -23,8 +23,6 @@ public class Documents extends Folder {
         Files.move(sourcePath, destinationPath, StandardCopyOption.REPLACE_EXISTING);
     }
 
-    public void countExtensions(){};
-
 
     @Override
     public String toString() {

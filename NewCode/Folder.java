@@ -2,7 +2,6 @@ package NewCode;
 import java.io.File;
 import java.io.IOException;
 
-@FunctionalInterface
 interface FileOrganizer {
     String[] getExtensions();
     
