@@ -17,6 +17,7 @@ When files are all over the place and not organized properly, it becomes hard to
 
 ## II. Functionality
 **The main functionality of the File Organizer application includes the following:**
+
 **1, Organizing Files:**
 The core feature of the application is to organize files based on their file extensions or specific criteria. 
 The application iterates through all the files in the specified folder, identifies their file extensions, and moves them to the corresponding subfolder.
