@@ -1,9 +1,7 @@
 package NewCode;
+
 import java.io.File;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.StandardCopyOption;
+import java.io.FilenameFilter;
 
 public class Documents extends Folder {
     protected String[] extensions = {"docx", "doc", "txt", "pdf", "pptx", "ppt", "xlsx", "xls", "csv", "rtf", "dotx"};
@@ -17,12 +15,30 @@ public class Documents extends Folder {
     }
 
     @Override
-    public void organizeFile(File file, String fileName, String sourceFolder) throws IOException {
-        Path sourcePath = file.toPath();
-        Path destinationPath = Path.of(sourceFolder, folderName, fileName);
-        Files.move(sourcePath, destinationPath, StandardCopyOption.REPLACE_EXISTING);
+    public void countExtensions(String documentFolder) {
+    File folder = new File(documentFolder);
+    int[] extensionCount = new int[extensions.length];
+
+    // Counting extensions
+    for (int i = 0; i < extensions.length; i++) {
+        final String extension = extensions[i];
+        File[] files = folder.listFiles(new FilenameFilter() {
+            @Override
+            public boolean accept(File dir, String name) {
+                return name.toLowerCase().endsWith("." + extension);
+            }
+        });
+
+        if (files != null) {
+            extensionCount[i] = files.length;
+        }
     }
 
+    // Printing extension counts
+    for (int i = 0; i < extensions.length; i++) {
+        System.out.println("Extension: " + extensions[i] + ", Count: " + extensionCount[i]);
+    }
+}
 
     @Override
     public String toString() {

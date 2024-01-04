@@ -29,7 +29,8 @@ public class GUI {
 
         JButton button = new JButton("Organize");
         button.setPreferredSize(new Dimension(100, 30));
-            
+        
+        //anonymous class
         button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

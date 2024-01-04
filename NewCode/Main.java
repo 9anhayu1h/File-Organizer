@@ -17,6 +17,11 @@ public class Main {
     public static void main(String[] args) {
         GUI gui = new GUI();
         gui.mainPanel();
+
+        // String folderPath = "C:\\Users\\PC\\Downloads";
+        // Documents documents = new Documents();
+        // documents.countFiles(folderPath);
+        // documents.countExtensions(folderPath);
     }
 
     public static void createSubFolder(String sourceFolder) {
