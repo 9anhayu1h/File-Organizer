@@ -88,8 +88,8 @@ Exception handling is not explicitly implemented in the provided code, but the d
 [Example: organizeFiles method in main](https://github.com/9anhayu1h/File-Organizer/blob/main/NewCode/Main.java)
 
 ### File I/O:
-The FileIO class provides methods for saving a FolderNameAndPath object to a file using serialization. 
-The setFilePath method sets the file path for saving the object, and the saveToFile method serializes the FolderNameAndPath object and saves it to the specified file path. Serialization allows objects to be converted into a byte stream for storage or transmission.
+The History class provides methods for saving a user input to a file using serialization. 
+The savePath method get user input from GUI class and write it to txt file using fileReader and bufferedWriter. 
 [Example: History](https://github.com/9anhayu1h/File-Organizer/blob/main/NewCode/History.java)
 
 ### Anonymous Inner Class or Functional Interface/Lambda Expression:
