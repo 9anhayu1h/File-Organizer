@@ -43,43 +43,64 @@ Objects of these classes are created and utilized within the Main class to organ
 The code demonstrates inheritance by utilizing a superclass-subclass relationship between the Folder class and its specialized subclasses (Documents, Picture, etc.). 
 The subclasses inherit properties and methods from the Folder class and provide their own implementations when necessary.
 
-### Constructor:
+#### SuperClass:
+In our program we have The Folder class. As the super class Folder, has all the neccessary method in order to perform the file organization
+[Folder](https://github.com/9anhayu1h/File-Organizer/blob/main/NewCode/Folder.java)
+
+#### SubClass:
+Inherit from the Folder class there are multiple subclass with its unique field instance.
+[Documents](https://github.com/9anhayu1h/File-Organizer/blob/main/NewCode/Documents.java)
+[Picture](https://github.com/9anhayu1h/File-Organizer/blob/main/NewCode/Picture.java)
+[Music](https://github.com/9anhayu1h/File-Organizer/blob/main/NewCode/Music.java)
+[Programs](https://github.com/9anhayu1h/File-Organizer/blob/main/NewCode/Programs.java)
+[Video](https://github.com/9anhayu1h/File-Organizer/blob/main/NewCode/Video.java)
+[Compressed](https://github.com/9anhayu1h/File-Organizer/blob/main/NewCode/Compressed.java)
+
+#### Constructor:
 The Folder class has a constructor that initializes the folderName property. 
 Subclasses like Documents, Picture, etc., invoke the superclass constructor using the super keyword to ensure proper initialization of inherited properties.
 [Example of constructor](https://github.com/9anhayu1h/File-Organizer/blob/main/NewCode/Folder.java)
 
-### Overriding method:
-The subclasses (Documents, Picture, etc.) override the organizeFile method defined in the Folder class. 
+#### Overriding method:
+The subclasses (Documents, Picture, etc.) override the countExtensions method defined in the Folder class. 
 Method overriding allows subclasses to provide their own implementation of inherited methods.
+[Example: override method of countExtensions](https://github.com/9anhayu1h/File-Organizer/blob/main/NewCode/Documents.java)
 
 ### Polymorphism: Casting
 Polymorphism is demonstrated through method overriding and the usage of an anonymous inner class in the Main class. 
 Polymorphism allows objects of different classes to be treated as objects of a common superclass (Folder in this case), promoting flexibility and extensibility of the code.
+[Example: casting from folder object to FileOrganizer in organizeFiles method of main](https://github.com/9anhayu1h/File-Organizer/blob/main/NewCode/Main.java#L34)
 
 ### Encapsulation: Access Modifiers
 Access modifiers are used to encapsulate the properties and methods of classes,providing control over their visibility and accessibility. 
 In the file organizer application, access modifiers such as public, private, protected, and default (no modifier) are used to enforce encapsulation.
+[Example: Acess modifiers in Folder](https://github.com/9anhayu1h/File-Organizer/blob/main/NewCode/Folder.java)
 
 ### Abstraction: Abstract Class or Interface
-The Folder class is defined as an abstract class using the abstract keyword. 
-Abstract classes cannot be instantiated directly but serve as blueprints for subclasses. 
+The FileOrganizer class is defined as an interface using the interface keyword.
+Interface cannot be instantiated directly but serve as blueprints for the super class, Folder. 
 The Folder class declares an abstract method organizeFile, which is implemented in its subclasses.
+[Example: FilesOrganizer](https://github.com/9anhayu1h/File-Organizer/blob/main/NewCode/FileOrganizer.java)
 
 ### Exception handling:
 The organizeFile method in the Folder class and its subclasses declare to throw an IOException, indicating that the method can potentially encounter an I/O exception. 
 Exception handling is not explicitly implemented in the provided code, but the declaration of the IOException allows for handling potential errors when performing file operations.
+[Example: organizeFiles method in main](https://github.com/9anhayu1h/File-Organizer/blob/main/NewCode/Main.java)
 
 ### File I/O:
 The FileIO class provides methods for saving a FolderNameAndPath object to a file using serialization. 
 The setFilePath method sets the file path for saving the object, and the saveToFile method serializes the FolderNameAndPath object and saves it to the specified file path. Serialization allows objects to be converted into a byte stream for storage or transmission.
+[Example: History](https://github.com/9anhayu1h/File-Organizer/blob/main/NewCode/History.java)
 
 ### Anonymous Inner Class or Functional Interface/Lambda Expression:
 An anonymous inner class is used in the Main class to override the countExtensions method of the Documents class. 
 The anonymous inner class provides a custom implementation of the countExtensions method without explicitly creating a separate class.
+[Example: Anonymous Inner Class in mainPanel method of GUI class](https://github.com/9anhayu1h/File-Organizer/blob/main/NewCode/GUI.java)
 
 ### Static method:
 The Main class contains several static methods such as main, createSubFolder, and organizeFiles. 
 Static methods belong to the class itself rather than individual objects and can be accessed without creating an instance of the class.
+[Example: createSubFolder and organizeFiles in Main](https://github.com/9anhayu1h/File-Organizer/blob/main/NewCode/Main.java)
 
 
 
