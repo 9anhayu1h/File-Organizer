@@ -46,6 +46,7 @@ The subclasses inherit properties and methods from the Folder class and provide 
 ### Constructor:
 The Folder class has a constructor that initializes the folderName property. 
 Subclasses like Documents, Picture, etc., invoke the superclass constructor using the super keyword to ensure proper initialization of inherited properties.
+[Example of constructor](https://github.com/9anhayu1h/File-Organizer/blob/main/NewCode/Folder.java)
 
 ### Overriding method:
 The subclasses (Documents, Picture, etc.) override the organizeFile method defined in the Folder class. 
